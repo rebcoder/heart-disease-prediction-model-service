@@ -30,7 +30,7 @@ def predict():
                  'st_depression', 'st_slope', 'num_major_vessels', 'thalassemia']
 
     # Convert features to the expected format for the model (2D array)
-    features_array = np.array([features])
+    features_array = np.array([features]).astype(float)
 
     # Convert test_features into a DataFrame with the correct column names
     test_features_df = pd.DataFrame(features_array, columns=col_names)
@@ -47,4 +47,4 @@ def predict():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False)
